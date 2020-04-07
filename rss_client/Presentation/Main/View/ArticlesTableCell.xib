@@ -17,14 +17,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BNm-R3-XJE">
-                        <rect key="frame" x="20" y="0.0" width="166" height="158"/>
+                        <rect key="frame" x="20" y="19" width="120" height="120"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="166" id="qTP-7Z-e3M"/>
-                            <constraint firstAttribute="height" constant="158" id="thY-pF-kqE"/>
+                            <constraint firstAttribute="height" constant="120" id="F1C-wY-BOQ"/>
+                            <constraint firstAttribute="width" constant="120" id="vHM-Bl-4Zb"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCz-w6-seR">
-                        <rect key="frame" x="206" y="33" width="280" height="20.5"/>
+                        <rect key="frame" x="160" y="15" width="326" height="128"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,11 +32,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="MCz-w6-seR" firstAttribute="leading" secondItem="BNm-R3-XJE" secondAttribute="trailing" constant="20" id="5m4-fg-8Q5"/>
-                    <constraint firstItem="MCz-w6-seR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="33" id="62Y-Fa-oaE"/>
+                    <constraint firstItem="MCz-w6-seR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="62Y-Fa-oaE"/>
                     <constraint firstAttribute="trailing" secondItem="MCz-w6-seR" secondAttribute="trailing" constant="20" id="6IT-Ke-pE1"/>
-                    <constraint firstItem="BNm-R3-XJE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="H33-sv-UP2"/>
+                    <constraint firstAttribute="bottom" secondItem="MCz-w6-seR" secondAttribute="bottom" constant="15" id="AnX-aP-9dX"/>
                     <constraint firstItem="BNm-R3-XJE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="iYP-iV-9Xy"/>
-                    <constraint firstAttribute="bottom" secondItem="BNm-R3-XJE" secondAttribute="bottom" id="zAq-m8-NnA"/>
+                    <constraint firstItem="BNm-R3-XJE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yIJ-4z-vog"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

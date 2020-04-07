@@ -17,14 +17,14 @@ protocol ParserProtocol: class {
 
 class Parser: NSObject, ParserProtocol {
     
-    var networkService: Networking?
+    private var networkService = NetworkService()
     var articles: [Article]? = []
     
     private var currentArticle: Article?
-    private var articleCharacter = ""
+    private var elementName = ""
     
     func startParse(completion: @escaping((Bool) -> Void)) {
-        networkService?.getData(completion: { [weak self] (data, error) in
+        networkService.getData(completion: { (data, error) in
             if let data = data {
                 let parser = XMLParser(data: data)
                 parser.delegate = self
@@ -44,27 +44,30 @@ extension Parser: XMLParserDelegate {
         if elementName == "item" {
             currentArticle = Article(title: "", imagePath: "", description: "")
         }
+        
+        self.elementName = elementName
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        articleCharacter = string
+        
+        switch elementName {
+        case "title":
+            currentArticle?.title += string
+        case "itunes:image":
+            currentArticle?.imagePath += string
+        case "description":
+            currentArticle?.title += string
+        default:
+            print("")
+        }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
-        switch elementName {
-        case "title":
-            currentArticle?.title = articleCharacter
-        case "itunes:image":
-            currentArticle?.imagePath = articleCharacter
-        case "description":
-            currentArticle?.title = articleCharacter
-        default:
-            print("parse error")
-        }
-        
-        if let article = currentArticle {
-            articles?.append(article)
+        if elementName == "item" {
+            if let article = currentArticle {
+                articles?.append(article)
+            }
         }
     }
 }

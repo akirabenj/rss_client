@@ -15,7 +15,7 @@ protocol MainViewProtocol: class {
 
 class MainViewController: UIViewController {
     
-    weak var presenter: MainViewPresenterProtocol!
+    var presenter: MainViewPresenterProtocol!
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib(nibName: "ArticlesTableViewCell", bundle: nil), forCellReuseIdentifier: "articleCell")
+        self.tableView.register(UINib(nibName: "ArticlesTableCell", bundle: nil), forCellReuseIdentifier: "articleCell")
         // Do any additional setup after loading the view.
     }
 
@@ -45,15 +45,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleCell") as? ArticlesTableCell else {
             return UITableViewCell()
         }
+        if !articles.isEmpty {
+            cell.setArticle(articles[indexPath.row])
+        }
         
-        cell.setArticle(articles[indexPath.row])
         return cell
     }
 }
 
 extension MainViewController: MainViewProtocol {
     func success() {
-        print(articles.first?.title ?? "fail")
+        tableView.reloadData()
     }
     
     func failure() {
