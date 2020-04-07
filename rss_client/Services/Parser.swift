@@ -9,13 +9,16 @@
 import Foundation
 
 protocol ParserProtocol: class {
+    
+    var articles: [Article]? { get set }
+    
     func startParse(completion: @escaping((Bool) -> Void))
 }
 
 class Parser: NSObject, ParserProtocol {
     
     var networkService: Networking?
-    var articles: [Article] = []
+    var articles: [Article]? = []
     
     private var currentArticle: Article?
     private var articleCharacter = ""
@@ -61,7 +64,7 @@ extension Parser: XMLParserDelegate {
         }
         
         if let article = currentArticle {
-            articles.append(article)
+            articles?.append(article)
         }
     }
 }
