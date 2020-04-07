@@ -12,6 +12,7 @@
 		B645E20A243CFB2A00607CD4 /* ArticlesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645E208243CFB2A00607CD4 /* ArticlesTableCell.swift */; };
 		B645E20B243CFB2A00607CD4 /* ArticlesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B645E209243CFB2A00607CD4 /* ArticlesTableCell.xib */; };
 		B645E20E243CFCA400607CD4 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645E20D243CFCA400607CD4 /* UIExtensions.swift */; };
+		B645E210243CFE8C00607CD4 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B645E20F243CFE8C00607CD4 /* Builder.swift */; };
 		B696BFAE243769BB00397E43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696BFAD243769BB00397E43 /* AppDelegate.swift */; };
 		B696BFB0243769BB00397E43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696BFAF243769BB00397E43 /* SceneDelegate.swift */; };
 		B696BFB7243769BC00397E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B696BFB6243769BC00397E43 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		B645E208243CFB2A00607CD4 /* ArticlesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableCell.swift; sourceTree = "<group>"; };
 		B645E209243CFB2A00607CD4 /* ArticlesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlesTableCell.xib; sourceTree = "<group>"; };
 		B645E20D243CFCA400607CD4 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		B645E20F243CFE8C00607CD4 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		B696BFAA243769BB00397E43 /* rss_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rss_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B696BFAD243769BB00397E43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B696BFAF243769BB00397E43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				B696BFB6243769BC00397E43 /* Assets.xcassets */,
 				B696BFB8243769BC00397E43 /* LaunchScreen.storyboard */,
 				B696BFBB243769BC00397E43 /* Info.plist */,
+				B645E20F243CFE8C00607CD4 /* Builder.swift */,
 			);
 			path = rss_client;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				B696BFAE243769BB00397E43 /* AppDelegate.swift in Sources */,
 				B645E207243CF60800607CD4 /* MainPresenter.swift in Sources */,
 				B696BFB0243769BB00397E43 /* SceneDelegate.swift in Sources */,
+				B645E210243CFE8C00607CD4 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y578K3V42R;
 				INFOPLIST_FILE = rss_client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +386,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y578K3V42R;
 				INFOPLIST_FILE = rss_client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

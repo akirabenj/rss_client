@@ -29,14 +29,18 @@ class MainViewPresenter: MainViewPresenterProtocol {
         getArticles()
     }
     
+    deinit {
+        print("Presenter deinited")
+    }
+    
     func getArticles() {
-        parser?.startParse(completion: { [weak self] fetched in
+        parser?.startParse(completion: { fetched in
             DispatchQueue.main.async {
                 if fetched {
-                    self?.articles = self?.parser?.articles
-                    self?.mainView?.success()
+                    self.articles = self.parser?.articles
+                    self.mainView?.success()
                 } else {
-                    self?.mainView?.failure()
+                    self.mainView?.failure()
                 }
             }
         })
